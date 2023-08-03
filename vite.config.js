@@ -25,10 +25,14 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ["resources/css/app.css", "resources/js/app.js"],
+            ssr: "resources/js/ssr.js",
             refresh: true,
         }),
         svelte({
-            preprocess: [ sveltePreprocess({ typescript: true })]
+            compilerOptions: {
+                hydratable: true,
+            },
+            preprocess: [sveltePreprocess({ typescript: true })],
         }),
         {
             name: "blade",
