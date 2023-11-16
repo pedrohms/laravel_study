@@ -13,6 +13,7 @@ class IndexController extends Controller
     {
 
         $request->cookies->add([Cookie::make(name: 'testeCookie', value: 1, httpOnly: true)]);
+
         echo json_encode($request->cookie('testeCookie'));
 
         if (!$request->cookies->has('testeCookie')) {
@@ -41,5 +42,9 @@ class IndexController extends Controller
                 'count' => $request->cookies->get('testeCookie')
             ])->toResponse($request);
         }
+    }
+
+    public function testeroute( Request $request) {
+        return view('testeroute');
     }
 }

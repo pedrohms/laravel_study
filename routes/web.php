@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomFunctions;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/testeroute', [IndexController::class, 'testeroute']);
+Route::get('/getSomeData', [CustomFunctions::class, 'getSomeData']);
+Route::get('/testeroute', [IndexController::class, 'testeroute']);
